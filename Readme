@@ -1,0 +1,49 @@
+QR-ROM: 
+
+Converts a file into QR-Codes for data storage and vice versa
+
+
+Disclaimer:
+-This program is just for experimental use
+-Don't use it as a single backup
+
+
+Explanation:
+ QR-ROM write : converts a binary file into a base64 format. It is splitted into files each the same size (e.g. 1500 Bytes) 
+ 				Those are converted into QR-Codes which are montaged in 3x4 images
+ 
+ QR-ROM read : reads out all montaged QR-Codes by using zbarimg and extract*. Both are used to read the data and bring it back
+ 				 in the correct order.
+ 				 
+
+
+Usage:
+
+QR-ROM.sh write Inputfile OutputDirectory
+
+	creates from the Inputfile into OutputDirectory png files, which can be printed
+
+
+QR-ROM.sh read Inputdirectory Outputdirectry
+	
+	restores from the scanned images in Inputdirectory the original file in Outputdirectory
+	
+	
+
+additional Information:
+	The montage size should be adjusted, if the scanner or printer has an inferior imageresolution.
+	Also try different settings for the split size for writing the data
+
+
+
+Mandatory preinstalled programs:
+	Unix / BASH
+	gnu core utils
+	built-essential
+	qrencode
+	ImageMagick
+	zbar-tools
+
+
+
+
